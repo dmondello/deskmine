@@ -35,7 +35,8 @@ class CreateAttachmentsTable extends Migration
                   KEY `index_attachments_on_author_id` (`author_id`),
                   KEY `index_attachments_on_created_on` (`created_on`),
                   KEY `index_attachments_on_container_id_and_container_type` (`container_id`,`container_type`)
-                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+              )
+                ENGINE=InnoDB DEFAULT CHARSET=utf8;
          *
          *
          *
@@ -44,8 +45,8 @@ class CreateAttachmentsTable extends Migration
 
         Schema::create('attachments', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('id', 11);
-            $table->integer('container_id')->nullable()->unsigned();
+            $table->increments('id');
+            $table->integer('container_id')->nullable()->index();
             $table->string('container_type', 30)->nullable()->index();
             $table->string('filename', 255);
             $table->string('disk_filename', 255);
