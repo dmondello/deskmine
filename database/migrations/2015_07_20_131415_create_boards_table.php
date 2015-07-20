@@ -43,12 +43,12 @@ class CreateBoardsTable extends Migration
             $table->increments('id');
             $table->integer('project_id');
             $table->string('name')->default('');
-            $table->string('description')->default('null');
+            $table->string('description')->default(null);
             $table->integer('position')->default(1);
             $table->integer('topics_count')->default(0);
             $table->integer('message_count')->default(0);
-            $table->integer('last_message_id')->default('null')->index;
-            $table->integer('parent_id')->default('null');
+            $table->integer('last_message_id')->default(null)->index;
+            $table->integer('parent_id')->default(null);
 
         });
 

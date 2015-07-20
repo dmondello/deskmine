@@ -46,19 +46,19 @@ class CreateAuthSourcesTable extends Migration
             $table->increments('id')->index;
             $table->string('type', 30)->default('')->index;
             $table->string('name', 60)->default('');
-            $table->string('host', 60)->default('null');
-            $table->integer('port')->default('null');
-            $table->string('account', 255)->default('null');
+            $table->string('host', 60)->default(null);
+            $table->integer('port')->default(null);
+            $table->string('account', 255)->default(null);
             $table->string('password', 255)->default('');
-            $table->string('base_dn', 255)->default('null');
-            $table->string('attr_login', 30)->default('null');
-            $table->string('attr_firstname', 30)->default('null');
-            $table->string('attr_lastname', 30)->default('null');
-            $table->string('attr_mail', 30)->default('null');
+            $table->string('base_dn', 255)->default(null);
+            $table->string('attr_login', 30)->default(null);
+            $table->string('attr_firstname', 30)->default(null);
+            $table->string('attr_lastname', 30)->default(null);
+            $table->string('attr_mail', 30)->default(null);
             $table->tinyInteger('onthefly_register')->default(0);
             $table->tinyInteger('tls')->default(0);
-            $table->string('filter', 255)->default('null');
-            $table->integer('timeout')->default('null');
+            $table->string('filter', 255)->default(null);
+            $table->integer('timeout')->default(null);
 
 
 

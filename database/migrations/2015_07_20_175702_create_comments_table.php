@@ -36,7 +36,7 @@ class CreateCommentsTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('commented_type', 30)->default(0)->index;
-            $table->integer('commented_id')->default('');
+            $table->integer('commented_id');
             $table->integer('author_id')->default(0)->index;
             $table->text('comments');
             $table->dateTime('updated_on');

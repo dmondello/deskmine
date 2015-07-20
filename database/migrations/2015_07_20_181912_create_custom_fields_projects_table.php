@@ -20,11 +20,11 @@ class CreateCustomFieldsProjectsTable extends Migration
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
         */
-        Schema::create('custom_fields', function (Blueprint $table) {
+        Schema::create('custom_fields_projects', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id')->index;
             $table->string('type', 30)->default('')->index;
-           
+
         });
 
 

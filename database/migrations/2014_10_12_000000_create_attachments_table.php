@@ -55,7 +55,7 @@ class CreateAttachmentsTable extends Migration
             $table->string('digest', 40)->default('');
             $table->integer('downloads')->default(0);
             $table->integer('author_id')->default(0)->index;
-            $table->dateTime('created_on')->default('')->index;
+            $table->dateTime('created_on')->index;
             $table->string('description', 40)->default('');
             $table->string('disk_directory', 255)->default('');
 

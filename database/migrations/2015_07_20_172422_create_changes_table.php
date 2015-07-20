@@ -34,7 +34,7 @@ class CreateChangesTable extends Migration
         Schema::create('changes', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->integer('changeset_id')->default('')->unsigned();
+            $table->integer('changeset_id')->unsigned();
             $table->string('action', 1)->default('');
             $table->text('path');
             $table->text('from_path', 255);

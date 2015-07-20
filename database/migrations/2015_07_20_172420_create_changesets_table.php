@@ -39,14 +39,14 @@ class CreateChangesetsTable extends Migration
         Schema::create('changesets', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->integer('repository_id')->unique->index;
+            $table->integer('repository_id')->unique;
             $table->string('revision', 255)->unique;
-            $table->varchar('committer')->default(null);
-            $table->dataTime('committed_on')->index;;
+            $table->string('committer')->default(null);
+            $table->dateTime('committed_on')->index;
             $table->longText('comments');
             $table->date('commit_date')->default(null);
-            $table->string('scmid', 255)->default(null)->index;;
-            $table->integer('user_id')->default(null)->index;
+            $table->string('scmid', 255)->index;
+            $table->integer('user_id')->index;
 
         });
 
