@@ -46,18 +46,18 @@ class CreateAttachmentsTable extends Migration
         Schema::create('attachments', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->integer('container_id')->nullable()->index();
-            $table->string('container_type', 30)->nullable()->index();
-            $table->string('filename', 255);
-            $table->string('disk_filename', 255);
+            $table->integer('container_id')->default(null)->index;
+            $table->string('container_type', 30)->default(null)->index;
+            $table->string('filename', 255)->default('');
+            $table->string('disk_filename', 255)->default('');
             $table->integer('filesize')->default(0);
-            $table->string('content_type', 255);
-            $table->string('digest', 40);
+            $table->string('content_type', 255)->default('');
+            $table->string('digest', 40)->default('');
             $table->integer('downloads')->default(0);
-            $table->integer('author_id')->default(0)->index();
-            $table->dateTime('created_on', 11)->nullable()->index();
-            $table->string('description', 40)->nullable();
-            $table->string('disk_directory', 255)->nullable();
+            $table->integer('author_id')->default(0)->index;
+            $table->dateTime('created_on')->default('')->index;
+            $table->string('description', 40)->default('');
+            $table->string('disk_directory', 255)->default('');
 
 
 

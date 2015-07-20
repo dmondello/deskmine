@@ -43,22 +43,22 @@ class CreateAuthSourcesTable extends Migration
     {
         Schema::create('auth_sources', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('id')->index();
-            $table->string('type', 30)->index();
-            $table->string('host', 60);
-            $table->timestamp('created_at')->nullable();
-            $table->integer('port')->nullable();
-            $table->string('account', 255)->nullable();
-            $table->string('password', 255)->nullable();
-            $table->string('base_dn', 255)->nullable();
-            $table->string('attr_login', 30)->nullable();
-            $table->string('attr_firstname', 30)->nullable();
-            $table->string('attr_lastname', 30)->nullable();
-            $table->string('attr_mail', 30)->nullable();
+            $table->increments('id')->index;
+            $table->string('type', 30)->default('')->index;
+            $table->string('name', 60)->default('');
+            $table->string('host', 60)->default('null');
+            $table->integer('port')->default('null');
+            $table->string('account', 255)->default('null');
+            $table->string('password', 255)->default('');
+            $table->string('base_dn', 255)->default('null');
+            $table->string('attr_login', 30)->default('null');
+            $table->string('attr_firstname', 30)->default('null');
+            $table->string('attr_lastname', 30)->default('null');
+            $table->string('attr_mail', 30)->default('null');
             $table->tinyInteger('onthefly_register')->default(0);
             $table->tinyInteger('tls')->default(0);
-            $table->string('filter', 255)->nullable();
-            $table->integer('timeout')->nullable();
+            $table->string('filter', 255)->default('null');
+            $table->integer('timeout')->default('null');
 
 
 
